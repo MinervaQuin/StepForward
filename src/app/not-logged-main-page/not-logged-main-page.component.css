@@ -1,0 +1,28 @@
+/* .container {
+    justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly | start | end | left | right ... + safe | unsafe;
+  } */
+
+  .body{
+    margin: 5px;
+  }
+  .container-2{
+    display: flex;
+    justify-content: space-around;
+    height: 45px;
+  }
+
+  .container-2-1{
+    display: flex;
+    width: 150px;    
+  }
+ 
+
+  .buttonJoinUs{
+    background-color: #5EA391;
+    color:white;
+    border: none;
+    border-radius: 25%;
+    width: 100%;
+    box-shadow: 0 0 1px 0px white inset, 0 0 1px 0px white;
+    
+  }

@@ -1,6 +1,12 @@
-/* .container {
-    justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly | start | end | left | right ... + safe | unsafe;
-  } */
+
+/* 
+@font-face {
+    font-family: "Poppins-Black";
+    src:local("../../assets/font/Poppins/Poppins-Black.ttf");
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
   .body{
     margin: 5px;
@@ -21,8 +27,27 @@
     background-color: #5EA391;
     color:white;
     border: none;
-    border-radius: 25%;
+    border-radius: 10px;
     width: 100%;
-    box-shadow: 0 0 1px 0px white inset, 0 0 1px 0px white;
     
+  }
+
+  /* What we do Paragraph */
+
+  .wwdtext{
+    display: flex;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+
+  }
+
+  .section-headers{
+/*     
+    font-family: "Poopins-Black"; */
+    
+    font-family: 'Poppins', sans-serif;
+    text-decoration-line: underline;
+    text-decoration-color: #583E29;
+    font-weight: 400;
   }

@@ -20,9 +20,9 @@
 
   .container-2-1{
     display: flex;
-    width: 150px;    
+    width: 150px;
   }
- 
+
 
   .buttonJoinUs{
     font-family: 'Poppins', sans-serif;
@@ -31,7 +31,7 @@
     border: none;
     border-radius: 10px;
     width: 100%;
-    
+
   }
 
   .container-button-arrow-down{
@@ -42,11 +42,11 @@
     height: max-content;
   }
   .arrow-down-icon{
-   
+
     padding-top: 1rem;
     padding-bottom: 1rem;
-    
-    
+
+
   }
 
   /* What we do Paragraph */
@@ -60,7 +60,7 @@
   }
 
   .section-headers{
-    
+
     font-family: 'Poppins', sans-serif;
     text-decoration-line: underline;
     text-decoration-color: #583E29;
@@ -80,4 +80,46 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+  }
+
+  /* Carousel */
+  .carousel-container{
+    margin-bottom: 30px;
+  }
+
+  .picsum-img-wrapper > img {
+    height: 70vh;
+    object-fit: cover;
+    width: 100%;
+  }
+  .carousel-caption > h3{
+    color: #FFFFFF;
+    text-shadow: 2px 2px #583E29;
+
+  }
+
+.carousel-section{
+  position: relative;
+}
+.carousel-header-section{
+  position: absolute;
+  top: 0;
+  margin-top: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.carousel-header-section > a {
+  margin-right: 20px;
+}
+.carousel-header-section > a > p {
+  font-weight: 400;
+  text-shadow: 1px 1px #5EA391;
+}
+
+  .join-us-section{
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
   }

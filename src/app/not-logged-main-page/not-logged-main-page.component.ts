@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./not-logged-main-page.component.css']
 })
 export class NotLoggedMainPageComponent {
+  images = [
+    {src: "../../assets/images/carousel/environment.jpg", title: "Environment Volunteering"},
+    {src: "../../assets/images/carousel/teaching.jpg", title: "Teaching Volunteering"},
+    {src: "../../assets/images/carousel/food supply.jpeg", title: "Food Supply Volunteering"}
+  ]
 
 }

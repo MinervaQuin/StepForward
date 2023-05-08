@@ -22,7 +22,6 @@ export class RegisterPageComponent {
 
 
   async registerUser() {
-    console.log(this.registerForm.get('email')?.value);
     let userInfo = await createUserWithEmailAndPassword(this.auth, <string>this.registerForm.get('email')?.value, <string>this.registerForm.get('password')?.value);
     if(userInfo){
 

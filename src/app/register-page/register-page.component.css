@@ -2,17 +2,16 @@
 .register-form{
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  margin-bottom: 100px;
 }
 
 .register-form-box{
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #FFFFFF;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), inset 0 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25), inset 0 2px 2px rgba(0, 0, 0, 0.25);
 }
 
 .full-name{
@@ -20,12 +19,79 @@
 }
 .form-box{
   border-radius: 10px;
-  margin: 10px;
-  width: max-content;
+  height: 40px;
+  border: none;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25), inset 0 2px 2px rgba(0, 0, 0, 0.25);
+  margin: 15px;
+  width: 80%;
   padding-left: 10px;
 }
+.full-name > .form-box {
+  width: auto;
+}
+
 .logo-image{
-  height: 151px;
-  width: 150px;
-  border-radius: 60px;
+  margin-top: 5px;
+  height: 70px;
+  width: auto;
+  border-radius: 30px;
+}
+
+.register-title{
+  margin-top: 3%;
+  margin-bottom: 3%;
+  font-weight: bold;
+  color: #583E29;
+  font-size: medium;
+}
+
+.term-of-use-checkbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+
+.term-of-use-checkbox > input {
+  margin-top: 7px;
+  margin-right: 2px;
+}
+
+.term-of-use-checkbox > p {
+  align-self: center;
+  margin-inline: 2px;
+}
+
+.term-of-use-checkbox > a {
+  color: #5EA391;
+  text-decoration: none;
+  margin-inline: 2px;
+
+}
+
+
+
+.form-button{
+  font-family: 'Poppins', sans-serif;
+  background-color: #5EA391;
+  color:white;
+  border: none;
+  border-radius: 10px;
+  width: 140px;
+  height: 50px;
+}
+
+.already-have-account{
+  margin-top: 5%;
+  display: flex;
+  flex-direction: row;
+}
+
+.already-have-account > a {
+  color: #5EA391;
+  text-decoration: none;
+}
+
+.already-have-account-text{
+  margin-inline: 3px;
 }

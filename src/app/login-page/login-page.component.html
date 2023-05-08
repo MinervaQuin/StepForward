@@ -1,1 +1,23 @@
-<p>login-page works!</p>
+<div class="login-form">
+  <a [routerLink]="['/']">
+    <img class="logo-image" src="../../assets/images/logo.png" alt="app logo">
+  </a>
+
+  <h2 class="login-title">Login</h2>
+  <div class="login-form-box" [formGroup]="loginForm">
+    <input class="form-box" id="email" placeholder="Email" type="email" formControlName="email">
+    <input class="form-box" id="password" placeholder="Password" type="password" formControlName="password">
+    <button class="form-button" (click)="loginUser()">
+      Login
+    </button>
+    <div class="already-have-account">
+      <p class="already-have-account-text">Don't have an account? </p>
+      <a class="already-have-account-text" [routerLink]="['/register']">Register</a>
+    </div>
+
+  </div>
+</div>
+
+<app-footer class="login-footer"></app-footer>
+
+

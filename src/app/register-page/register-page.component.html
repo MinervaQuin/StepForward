@@ -1,5 +1,9 @@
 <div class="register-form">
+  <a [routerLink]="['/']">
   <img class="logo-image" src="../../assets/images/logo.png" alt="app logo">
+  </a>
+
+  <h2 class="register-title">Register</h2>
   <div class="register-form-box" [formGroup]="registerForm">
     <div class="full-name">
       <input class="form-box" id="firstName" placeholder="First Name" type="text" formControlName="firstName">
@@ -24,3 +28,7 @@
 
   </div>
 </div>
+
+<app-footer></app-footer>
+
+

@@ -1,0 +1,26 @@
+.footer-container{
+  margin-top: 5%;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: #583E29;
+  position: page;
+  bottom: 0;
+}
+
+.footer-link{
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  margin-inline: 5%;
+}
+
+.footer-image{
+  color: white;
+  height: 30px;
+  margin-inline: 5%;
+}
+

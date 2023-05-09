@@ -13,6 +13,7 @@ import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { FooterComponent } from './footer/footer.component';
+import { DetailEventPageComponent } from './detail-event-page/detail-event-page.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FooterComponent } from './footer/footer.component';
     NotLoggedMainPageComponent,
     RegisterPageComponent,
     LoginPageComponent,
-    FooterComponent
+    FooterComponent,
+    DetailEventPageComponent
   ],
   imports: [
     ReactiveFormsModule,

@@ -3,6 +3,9 @@ import { MbscEventcalendarOptions, Notifications, MbscCalendarEvent, localeEs, l
 import { HttpClient } from '@angular/common/http';
 import {Firestore, collection, getDocs} from "@angular/fire/firestore";
 import { doc, getDoc } from 'firebase/firestore';
+import {Auth} from "@angular/fire/auth";
+
+import { Router } from '@angular/router';
 
 
 interface Event {
@@ -12,8 +15,6 @@ interface Event {
   color: string;
 }
 
-
-
 @Component({
   selector: 'app-my-calendar-page',
   templateUrl: './my-calendar-page.component.html',
@@ -22,55 +23,54 @@ interface Event {
 })
 export class MyCalendarPageComponent implements OnInit {
 
+  private auth: Auth = inject(Auth);
   private firestore: Firestore = inject(Firestore);
   events: Array<any> = [];
   eventsFiltered: any[] | null = [];
   searchTerm: string = "";
-
   users: Array<any> = [];
-
-  userEvents: any[] | null = [];
-
   myEvents: Event[] = []; // Array para almacenar los eventos del calendario
 
+  constructor(private http: HttpClient, private notify: Notifications, private router: Router) {
+    (async () => {;
+      this.auth.onAuthStateChanged(async (user) => {
+        if (user) {
+          const userID: string = user.uid;
+          this.eventsFiltered =  await this.getEventsForUser(userID);
 
-  constructor(private http: HttpClient, private notify: Notifications, private renderer: Renderer2) {
-    (async () => {
-      //this.loadEvents();
-      this.eventsFiltered = await this.getEventsForUser("HbCn6RvkrqcznYR45dS3HtQuRsG2");
+          const events: any[] = [];
+          // @ts-ignore
+          this.eventsFiltered.forEach((event) => {
 
-      const events: any[] = [];
-      // @ts-ignore
-      this.eventsFiltered.forEach((event) => {
+            const separatedDate = event.data()["date"].split('-');
 
-        const separatedDate = event.data()["date"].split('-');
+            const separatedTime = event.data()["time"].split('-');
+            const initialTime = separatedTime[0]
+            const finalTime = separatedTime[1]
 
-        const separatedTime = event.data()["time"].split('-');
-        const initialTime = separatedTime[0]
-        const finalTime = separatedTime[1]
+            const initialTimeHour = parseInt(initialTime.split(":")[0], 10);
+            const initialTimeMinute = parseInt(initialTime.split(":")[1], 10);
 
-        const initialTimeHour = parseInt(initialTime.split(":")[0], 10);
-        const initialTimeMinute = parseInt(initialTime.split(":")[1], 10);
+            const finalTimeHour = parseInt(finalTime.split(":")[0], 10);
+            const finalTimeMinute = parseInt(finalTime.split(":")[1], 10);
 
-        const finalTimeHour = parseInt(finalTime.split(":")[0], 10);
-        const finalTimeMinute = parseInt(finalTime.split(":")[1], 10);
+            const startDate = new Date(separatedDate[2], separatedDate[1]-1, separatedDate[0], initialTimeHour, initialTimeMinute); // Usa la fecha y hora actual como inicio (puedes ajustarla según tus necesidades)
+            const endDate = new Date(separatedDate[2], separatedDate[1]-1, separatedDate[0], finalTimeHour, finalTimeMinute);
 
+            const evnt = {
+              start: startDate,
+              end: endDate,
+              text: event.data()["title"],
+              color: '#5EA391'
+            };
 
-
-        const startDate = new Date(separatedDate[2], separatedDate[1]-1, separatedDate[0], initialTimeHour, initialTimeMinute); // Usa la fecha y hora actual como inicio (puedes ajustarla según tus necesidades)
-
-        const endDate = new Date(separatedDate[2], separatedDate[1]-1, separatedDate[0], finalTimeHour, finalTimeMinute);
-
-        const evnt = {
-          start: startDate,
-          end: endDate,
-          text: event.data()["title"],
-          color: '#5EA391'
-        };
-
-        events.push(evnt);
+            events.push(evnt);
+          });
+          this.myEvents = events
+        } else {
+          await this.router.navigate(['/login']);
+        }
       });
-      this.myEvents = events
     })();
   }
 
@@ -106,11 +106,7 @@ export class MyCalendarPageComponent implements OnInit {
         for (const eventId of eventIds) {
           const eventRef = doc(this.firestore, 'events', eventId);
           const eventSnapshot = await getDoc(eventRef);
-
-          //if (eventSnapshot.exists()) {
-          //const eventData = eventSnapshot.data();
           events.push(eventSnapshot); // Almacenar directamente los datos del evento en el array
-          //}
         }
       }
 
@@ -139,9 +135,6 @@ export class MyCalendarPageComponent implements OnInit {
     }
   }
 
-
-  //myEvents: MbscCalendarEvent[] = [];
-
   eventSettings: MbscEventcalendarOptions = {
     locale: localeEnGB,
     theme: 'ios',
@@ -157,38 +150,20 @@ export class MyCalendarPageComponent implements OnInit {
 
     onEventClick: (event) => {
       this.notify.toast({
-        message: event.event.title
+        message: event.event.text,
+        color: 'secondary'
       });
     }
   };
 
-  //ngOnInit(): void {
-  //this.http.jsonp<MbscCalendarEvent[]>('https://trial.mobiscroll.com/events/?vers=5', 'callback').subscribe((resp) => {
-  //  this.myEvents = resp;
-  //});
-  //}
-
   async ngOnInit(): Promise<void> {
-    //this.userEvents = await this.loadEventsUser("HbCn6RvkrqcznYR45dS3HtQuRsG2");
-    //this.eventsFiltered = await this.getEventsForUser("HbCn6RvkrqcznYR45dS3HtQuRsG2")
   }
-
 
   async loadEvents() {
     const colRef = collection(this.firestore, "events");
     const docSnap = await getDocs(colRef);
     this.events = docSnap.docs;
     this.eventsFiltered = this.events;
-  }
-
-  searchFilter() {
-    this.eventsFiltered = [];
-    this.events.forEach((doc) => {
-      if (doc.data().title.toUpperCase().includes(this.searchTerm.toUpperCase())) {
-        // @ts-ignore
-        this.eventsFiltered.push(doc);
-      }
-    })
   }
 }
 

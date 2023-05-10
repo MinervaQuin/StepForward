@@ -1,3 +1,4 @@
+import { MbscModule } from '@mobiscroll/angular';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -14,6 +15,14 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { MyCalendarPageComponent } from './my-calendar-page/my-calendar-page.component';
+
+
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
+import {AngularFireModule} from "@angular/fire/compat";
+
 
 @NgModule({
   declarations: [
@@ -22,9 +31,11 @@ import { HeaderComponent } from './header/header.component';
     RegisterPageComponent,
     LoginPageComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    MyCalendarPageComponent
   ],
-  imports: [
+  imports: [  
+    MbscModule,   
     ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
@@ -32,9 +43,21 @@ import { HeaderComponent } from './header/header.component';
     NgbCarouselModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore())
+    provideFirestore(() => getFirestore()),
+    AngularFireModule.initializeApp(environment.firebase),
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    HttpClientJsonpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+
+
+
+
+

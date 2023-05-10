@@ -22,6 +22,7 @@ import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import {AngularFireModule} from "@angular/fire/compat";
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import {AngularFireModule} from "@angular/fire/compat";
     LoginPageComponent,
     FooterComponent,
     HeaderComponent,
-    MyCalendarPageComponent
+    MyCalendarPageComponent,
+    PageNotFoundComponent
   ],
   imports: [  
     MbscModule,   

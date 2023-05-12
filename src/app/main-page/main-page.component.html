@@ -7,9 +7,9 @@
 
   <div *ngFor="let event of eventsFiltered">
 
-    <app-event-card [title]="event.data()['title']" [description]="event.data()['description']"
+    <app-event-card [image]="event.data()['urlImage']" [title]="event.data()['title']" [description]="event.data()['description']"
                     [organizationName]="event.data()['organizationName']" [reward]="event.data()['reward']"
-                    [date]="event.data()['date']"></app-event-card>
+                    [date]="event.data()['date']" (click)="redirection(event.data()['organizationName'], event.data()['title'])"></app-event-card>
 
   </div>
 

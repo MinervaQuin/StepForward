@@ -1,5 +1,6 @@
 import {Component, inject} from '@angular/core';
 import {Firestore, collection, getDocs} from "@angular/fire/firestore";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-main-page',
@@ -15,7 +16,7 @@ export class MainPageComponent {
 
    searchTerm: string = "";
 
-  constructor() {
+  constructor(private router: Router) {
     this.loadEvents()
   }
 
@@ -34,9 +35,15 @@ export class MainPageComponent {
         this.eventsFiltered.push(doc);
       }
     })
+  }
 
+  async redirection(organization: string, event: string) {
+    localStorage.setItem("organization", organization);
+    localStorage.setItem("event", event);
 
-
+    console.log(localStorage.getItem("organization"));
+    console.log(localStorage.getItem("event"));
+    await this.router.navigate(['/event']);
   }
 
 

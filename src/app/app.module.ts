@@ -1,3 +1,4 @@
+import { MbscModule } from '@mobiscroll/angular';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -24,7 +25,8 @@ import { DetailEventPageComponent } from './detail-event-page/detail-event-page.
     FooterComponent,
     DetailEventPageComponent
   ],
-  imports: [
+  imports: [  
+    MbscModule, 
     ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,

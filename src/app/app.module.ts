@@ -21,6 +21,7 @@ import { MyCalendarPageComponent } from './my-calendar-page/my-calendar-page.com
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 
 import {AngularFireModule} from "@angular/fire/compat";
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 import { MainPageComponent } from './main-page/main-page.component';
 import { EventCardComponent } from './main-page/event-card/event-card.component';
@@ -36,7 +37,8 @@ import { EventCardComponent } from './main-page/event-card/event-card.component'
     EventCardComponent,
     FooterComponent,
     HeaderComponent,
-    MyCalendarPageComponent
+    MyCalendarPageComponent,
+    PageNotFoundComponent
   ],
   imports: [  
     MbscModule, 

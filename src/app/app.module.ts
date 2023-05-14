@@ -1,3 +1,4 @@
+import { MbscModule } from '@mobiscroll/angular';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -13,6 +14,15 @@ import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
+import { MyCalendarPageComponent } from './my-calendar-page/my-calendar-page.component';
+
+
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
+import {AngularFireModule} from "@angular/fire/compat";
+
 import { MainPageComponent } from './main-page/main-page.component';
 import { EventCardComponent } from './main-page/event-card/event-card.component';
 
@@ -24,20 +34,35 @@ import { EventCardComponent } from './main-page/event-card/event-card.component'
     LoginPageComponent,
     FooterComponent,
     MainPageComponent,
-    EventCardComponent
+    EventCardComponent,
+    FooterComponent,
+    HeaderComponent,
+    MyCalendarPageComponent
   ],
-    imports: [
-        ReactiveFormsModule,
-        BrowserModule,
-        AppRoutingModule,
-        NgbModule,
-        NgbCarouselModule,
-        provideFirebaseApp(() => initializeApp(environment.firebase)),
-        provideAuth(() => getAuth()),
-        provideFirestore(() => getFirestore()),
-        FormsModule
-    ],
+  imports: [
+    MbscModule,
+    ReactiveFormsModule,
+    BrowserModule,
+    AppRoutingModule,
+    NgbModule,
+    NgbCarouselModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+    AngularFireModule.initializeApp(environment.firebase),
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    HttpClientJsonpModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+
+
+
+
+

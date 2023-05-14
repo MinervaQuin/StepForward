@@ -1,0 +1,34 @@
+<div class="register-form">
+  <a [routerLink]="['/']">
+  <img class="logo-image" src="../../assets/images/logo.png" alt="app logo">
+  </a>
+
+  <h2 class="register-title">Register</h2>
+  <div class="register-form-box" [formGroup]="registerForm">
+    <div class="full-name">
+      <input class="form-box" id="firstName" placeholder="First Name" type="text" formControlName="firstName">
+      <input class="form-box" id="lastName" placeholder="Last Name" type="text" formControlName="lastName">
+    </div>
+    <input class="form-box" id="email" placeholder="Email" type="email" formControlName="email">
+    <input class="form-box" id="password" placeholder="Password" type="password" formControlName="password">
+    <input class="form-box" id="passwordRepeat" placeholder="Repeat password" type="password"
+           formControlName="repeatPassword">
+    <div class="term-of-use-checkbox">
+      <input id="termOfUseCheckbox" type="checkbox">
+      <p class="term-of-use-text">I accept </p>
+      <a class="term-of-use-text" href="">Term of Use</a>
+    </div>
+    <button class="form-button" (click)="registerUser()">
+      Register
+    </button>
+    <div class="already-have-account">
+      <p class="already-have-account-text">Already have an account? </p>
+      <a class="already-have-account-text" [routerLink]="['/login']">Login</a>
+    </div>
+
+  </div>
+</div>
+
+<app-footer></app-footer>
+
+

@@ -20,7 +20,7 @@
               <div class="coins-counter card-styling-wrapper">
                  <div class="card card-styling">
                     <img class="card-styling-item" src="../../assets/images/iconos/coin.svg" >
-                    <h6 class="card-styling-item">45</h6>
+                    <h6 class="card-styling-item">{{this.userCoins}}</h6>
                 </div>
              </div>
         </button>
@@ -30,13 +30,19 @@
 
 
 <!-- start rewards section -->
+  <div *ngFor="let reward of rewards">
+    <div *ngIf="parseInt(reward.data()['cost']) <= this.userCoins; else rewardUnavailableTemplate">
+      <app-reward-item-available [title]="reward.data()['title']" [description]="reward.data()['description']" [value]="reward.data()['cost']"></app-reward-item-available>
 
-    <app-reward-item-available [description]="'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enm ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'"
-                               [title]="'Reward 1'" [value]="'35'"></app-reward-item-available>
-    <app-reward-item-available [description]="'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enm ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'"
-                               [title]="'Reward 2'" [value]="'40'"></app-reward-item-available>
-    <app-reward-item-unavailable [description]="'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enm ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'"
-                             [title]="'Reward 3'" [value]="'55'"></app-reward-item-unavailable>
+    </div>
+
+    <ng-template #rewardUnavailableTemplate>
+      <app-reward-item-unavailable [title]="reward.data()['title']" [description]="reward.data()['description']" [value]="reward.data()['cost']"></app-reward-item-unavailable>
+    </ng-template>
+  </div>
+
+
+
 
 
 

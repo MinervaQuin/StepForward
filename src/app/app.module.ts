@@ -19,7 +19,6 @@ import { MyCalendarPageComponent } from './my-calendar-page/my-calendar-page.com
 
 
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
 
 import {AngularFireModule} from "@angular/fire/compat";
 
@@ -39,8 +38,8 @@ import { EventCardComponent } from './main-page/event-card/event-card.component'
     HeaderComponent,
     MyCalendarPageComponent
   ],
-  imports: [
-    MbscModule,
+  imports: [  
+    MbscModule, 
     ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,

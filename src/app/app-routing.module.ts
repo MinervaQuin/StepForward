@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'login', component: LoginPageComponent },
   { path: 'register', component: RegisterPageComponent },
   { path: 'home', component: MainPageComponent},
-  { path: '', redirectTo: '/welcome', pathMatch: "full"}
+  { path: '', redirectTo: '/welcome', pathMatch: "full"},
   { path: 'register', component: RegisterPageComponent },
   { path: 'mycalendar', component: MyCalendarPageComponent }
 ];

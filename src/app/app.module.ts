@@ -26,10 +26,15 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { MainPageComponent } from './main-page/main-page.component';
 import { EventCardComponent } from './main-page/event-card/event-card.component';
 import { DetailEventPageComponent } from './detail-event-page/detail-event-page.component';
+import { RewardsPageComponent } from './rewards-page/rewards-page.component';
+import {RewardItemAvailableComponent} from "./rewards-page/reward-item-available/reward-item-available.component";
+import {RewardItemUnavailableComponent} from "./rewards-page/reward-item-unavailable/reward-item-unavailable.component";
 
 @NgModule({
   declarations: [
     AppComponent,
+    NotLoggedMainPageComponent,
+    RewardsPageComponent,
     NotLoggedMainPageComponent,
     RegisterPageComponent,
     LoginPageComponent,
@@ -40,7 +45,10 @@ import { DetailEventPageComponent } from './detail-event-page/detail-event-page.
     FooterComponent,
     HeaderComponent,
     MyCalendarPageComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    FooterComponent,
+    RewardItemAvailableComponent,
+    RewardItemUnavailableComponent
   ],
   imports: [
     MbscModule,

@@ -1,5 +1,5 @@
 <!-- Carrousel -->
-<div class="carousel-container">
+<div class="carousel-container" id="carouselTitlePhotos">
   <ngb-carousel *ngIf="images" class="carousel-section">
     <ng-template ngbSlide>
       <div class="picsum-img-wrapper">
@@ -45,17 +45,17 @@
       </button>
     </div>
 
+    
+  </div>
 
-  </div>
-  <div class="container-button-arrow-down">
-    <button type="button" class="btn button-arrow-down"><i class="bi bi-arrow-bar-down arrow-down-icon"></i></button>
-  </div>
+  <!-- <a class="arrow-down-icon" href="#know-us"><i class="bi bi-arrow-bar-down arrow-down-icon"></i></a> -->
+  <a class="arrow-down-icon" href="#know-us"><img src="../../assets/fecha-down-grey-double.png" width="512" height="188" alt=""></a>
+
+  
 </div>
 
 
-<!-- <svg xmlns="http://www.w3.org/2000/svg" width="166px" height="66px" fill="currentColor" class="bi bi-arrow-bar-down" viewBox="0 0 16 16">
-    <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z"/>
-  </svg> -->
+
 <div class="body">
   <!-- What we do -->
   <div class="padding">
@@ -110,8 +110,58 @@
 
   </div>
   <!-- Experiences -->
-  <div class="padding">
+  <div id="know-us" class="padding">
     <h3 class="section-headers">&nbsp;&nbsp; Experiences &nbsp;&nbsp;</h3>
-
+    
   </div>
+  
+</div>
+
+<div class="carousel-container " id="carouselComments">
+  <ngb-carousel *ngIf="1==1" class="carousel-section" [showNavigationArrows]=false>
+    <ng-template ngbSlide>
+      <div class="picsum-comment-wrapper">
+        <div class="card-container card-content">
+          <div class="card card-content">            
+            <div class="card-body ">
+              <img class="rounded-circle img-thumbnail" src="https://bootstrapious.com/i/snippets/sn-slider-quote/avatar-1.jpg" alt="" width="50">
+              <h5 class="card-title">Taylor Fritz</h5>
+              <p class="card-text">"Excepteur sint occaecat cupidatat non proident, sunt in
+                  culpa qui officia deserunt mollit anim id est laborum!"</p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-comment-wrapper">
+        <div class="card-container">
+          <div class="card card-content">            
+            <div class="card-body card-content">
+              <img class="rounded-circle img-thumbnail" src="https://bootstrapious.com/i/snippets/sn-slider-quote/avatar-2.jpg" alt="" width="50">
+              <h5 class="card-title">Casper Ruud</h5>
+              <p class="card-text">"Duis aute irure dolor in reprehenderit in voluptate velit."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-comment-wrapper">
+        <div class="card-container">
+          <div class="card card-content">            
+            <div class="card-body card-content">
+              <img class="rounded-circle img-thumbnail" src="https://bootstrapious.com/i/snippets/sn-slider-quote/avatar-3.jpg" alt="" width="50">
+              <h5 class="card-title">Aryna Sabalenka</h5>
+              <p class="card-text">"Et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud, <br>Ut enim ad minim veniam, quis nostrud "</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </ng-template>
+  </ngb-carousel>
 </div>

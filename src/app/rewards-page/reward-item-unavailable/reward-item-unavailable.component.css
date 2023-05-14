@@ -1,0 +1,60 @@
+
+.reward-container{
+  display: grid;
+  grid-template-columns: 225px 1fr 200px;
+  margin-top: 3rem;
+  border-color: #706c69;
+  border-width: 2px;
+  border-style: solid;
+  padding: 1rem;
+  border-radius: 15px;
+  border-style: dashed;
+}
+
+.reward-photo{
+  height: 200px;
+  width: 200px;
+}
+
+.reward-photo-column{
+  max-width: min-content;
+  max-height: min-content;
+}
+
+.unlock-button-display{
+  display: flex;
+  align-self: center;
+  justify-self: flex-end;
+}
+
+.unlock-button-style{
+  background-color: #9b9696;
+  font-family: 'Poppins', sans-serif;
+  font-weight:500;
+  color: aliceblue;
+  border-color: #969292;
+  display: inherit;
+  flex-direction: row;
+  align-items: center;
+}
+
+.reward-title{
+  color: #d9d9d9;
+  font-family: 'Poppins', sans-serif;
+  font-weight:700;
+}
+
+.text-aligment{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-styling-item{
+  margin-left: 5px;
+  margin-bottom: 0;
+
+}
+.no-margin{
+  margin-bottom: 0;
+}

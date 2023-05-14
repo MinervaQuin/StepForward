@@ -17,8 +17,8 @@ const routes: Routes = [
   { path: 'home', component: MainPageComponent},
   { path: '', redirectTo: '/welcome', pathMatch: "full"},
   { path: 'mycalendar', component: MyCalendarPageComponent },
-  { path: '**', component: PageNotFoundComponent },
-  { path: 'event', component: DetailEventPageComponent }
+  { path: 'event', component: DetailEventPageComponent },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

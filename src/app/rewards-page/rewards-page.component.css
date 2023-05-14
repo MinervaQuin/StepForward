@@ -2,12 +2,142 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
 .body{
-    padding-left: 5%;
-    padding-right: 5%;
+    margin-left: 12%;
+    margin-right: 12%;
+    margin-bottom: 5%;
 }
 
 .section-title{
     font-family: 'Poppins', sans-serif;
     color: #583E29;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 
+}
+
+.money-buttons{
+    display: flex;
+    justify-content: space-around;
+}
+
+.button-style{
+    height: 5rem;
+    width: 20rem;
+    border-color: #583E29;
+    border-width: 2px;
+}
+
+.display-button-coins{
+    display: grid;
+    grid-template-columns: 1.5fr 0.5fr;
+    justify-items: flex-start;
+    align-items: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.display-button-wallet{
+    display: flex;
+    justify-items: flex-start;
+    align-items: center;
+}
+
+ .coins-counter{
+    align-self: center;
+    justify-self: flex-end;
+
+}
+
+.card-styling{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    padding: 8px;
+
+}
+
+.card-styling-item{
+    margin-inline: 5px;
+    margin-bottom: 0;
+
+}
+
+.card-styling-wrapper{
+    grid-column: 2 / 3;
+}
+
+icon-size{
+    font-size: 30px;
+}
+
+.img-size{
+  width: 35px;
+  height: 35px;
+  color: #ffd024;
+}
+
+
+.app-reward-item-available{
+    background-color: #457769;
+}
+/* rewards containers */
+
+/*
+
+
+.reward-container{
+    display: grid;
+    grid-template-columns: 225px 1fr 200px;
+    margin-top: 3rem;
+    border-color:#583E29;
+    border-width: 2px;
+    border-style: solid;
+    padding: 1rem;
+    border-radius: 15px;
+}
+
+.reward-photo{
+    height: 200px;
+    width: 200px;
+}
+
+.reward-photo-column{
+    max-width: min-content;
+    max-height: min-content;
+}
+
+.unlock-button-display{
+    display: flex;
+    align-self: center;
+    justify-self: flex-end;
+}
+
+.unlock-button-style{
+    background-color: #5EA391;
+    font-family: 'Poppins', sans-serif;
+    font-weight:500;
+    color: aliceblue;
+    border-color: #457769;
+}
+
+.reward-title{
+    color: #5EA391;
+    font-family: 'Poppins', sans-serif;
+    font-weight:700;
+}
+
+.text-aligment{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+*/
+
+.locked-button-style{
+    background-color: #D9D9D9;
+    font-family: 'Poppins', sans-serif;
+    font-weight:500;
+    color: aliceblue;
+    border-color: #929796;
 }

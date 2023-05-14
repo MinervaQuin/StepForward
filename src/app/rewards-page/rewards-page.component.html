@@ -1,9 +1,44 @@
 
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
 
 <div class="body">
-    <h1>Rewards</h1>
-    <button type="button" class="btn btn-primary">Primary
-       
-    </button>
-    <i class="bi bi-0-circle-fill">asdfs</i>
+    <h1 class="section-title">Rewards</h1>
+
+    <div class="money-buttons">
+        <button type="button" class="btn button-style display-button-wallet">
+            <h3>
+              <img class="img-size" src="../../assets/images/iconos/wallet2.svg" >
+                Wallet
+              </h3>
+        </button>
+
+        <button type="button" class="btn display-button-coins button-style">
+          <h3>
+              <img class="img-size" src="../../assets/images/iconos/cash-coin.svg" >
+                    SFCoins
+              </h3>
+              <div class="coins-counter card-styling-wrapper">
+                 <div class="card card-styling">
+                    <img class="card-styling-item" src="../../assets/images/iconos/coin.svg" >
+                    <h6 class="card-styling-item">45</h6>
+                </div>
+             </div>
+        </button>
+
+    </div>
+
+
+
+<!-- start rewards section -->
+
+    <app-reward-item-available [description]="'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enm ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'"
+                               [title]="'Reward 1'" [value]="'35'"></app-reward-item-available>
+    <app-reward-item-available [description]="'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enm ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'"
+                               [title]="'Reward 2'" [value]="'40'"></app-reward-item-available>
+    <app-reward-item-unavailable [description]="'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enm ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'"
+                             [title]="'Reward 3'" [value]="'55'"></app-reward-item-unavailable>
+
+
+
+
 </div>

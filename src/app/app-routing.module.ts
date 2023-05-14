@@ -6,6 +6,7 @@ import {RegisterPageComponent} from "./register-page/register-page.component";
 import {MainPageComponent} from "./main-page/main-page.component";
 import {MyCalendarPageComponent} from "./my-calendar-page/my-calendar-page.component";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
+import {DetailEventPageComponent} from "./detail-event-page/detail-event-page.component";
 
 const routes: Routes = [
   { path: 'welcome', component: NotLoggedMainPageComponent },
@@ -13,9 +14,9 @@ const routes: Routes = [
   { path: 'register', component: RegisterPageComponent },
   { path: 'home', component: MainPageComponent},
   { path: '', redirectTo: '/welcome', pathMatch: "full"},
-  { path: 'register', component: RegisterPageComponent },
   { path: 'mycalendar', component: MyCalendarPageComponent },
-  { path: '**', component: PageNotFoundComponent }
+  { path: '**', component: PageNotFoundComponent },
+  { path: 'event', component: DetailEventPageComponent }
 ];
 
 @NgModule({

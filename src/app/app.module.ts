@@ -25,6 +25,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 import { MainPageComponent } from './main-page/main-page.component';
 import { EventCardComponent } from './main-page/event-card/event-card.component';
+import { DetailEventPageComponent } from './detail-event-page/detail-event-page.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { EventCardComponent } from './main-page/event-card/event-card.component'
     RegisterPageComponent,
     LoginPageComponent,
     FooterComponent,
+    DetailEventPageComponent,
     MainPageComponent,
     EventCardComponent,
     FooterComponent,
@@ -40,8 +42,8 @@ import { EventCardComponent } from './main-page/event-card/event-card.component'
     MyCalendarPageComponent,
     PageNotFoundComponent
   ],
-  imports: [  
-    MbscModule, 
+  imports: [
+    MbscModule,
     ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,

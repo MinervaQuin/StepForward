@@ -1,0 +1,27 @@
+<link href="/node_modules/@mobiscroll/angular/dist/css/mobiscroll.min.css" rel="stylesheet" />
+
+<div class="detail-event-container">
+    <div class="title-container">
+        <h1 class="event-title">{{title}}</h1>
+    </div>
+    <div class="event-img-container">
+        <img class="event-img" src={{urlImage}}>
+    </div>
+    <div class="info-container">
+        <h2>{{organization}}</h2>
+        <h2>Description</h2>
+        <p class="description">{{description}}</p>
+    </div>
+
+    <div class="mycalendar">
+      <mbsc-eventcalendar [data]="organizationEvent" [options]="eventSettings"></mbsc-eventcalendar>
+    </div>
+
+    <div class="button-container">
+        <button class="form-button" (click)="suscribe()">
+            Subscribe
+        </button>
+    </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,11 +1,11 @@
-import { Component, OnInit, inject, Renderer2 } from '@angular/core';
-import { MbscEventcalendarOptions, Notifications, MbscCalendarEvent, localeEs, localeEnGB } from '@mobiscroll/angular';
-import { HttpClient } from '@angular/common/http';
-import {Firestore, collection, getDocs} from "@angular/fire/firestore";
-import { doc, getDoc } from 'firebase/firestore';
+import {Component, inject, OnInit} from '@angular/core';
+import {localeEnGB, MbscEventcalendarOptions, Notifications} from '@mobiscroll/angular';
+import {HttpClient} from '@angular/common/http';
+import {collection, Firestore, getDocs} from "@angular/fire/firestore";
+import {doc, getDoc} from 'firebase/firestore';
 import {Auth} from "@angular/fire/auth";
 
-import { Router } from '@angular/router';
+import {Router} from '@angular/router';
 
 
 interface Event {
@@ -29,14 +29,14 @@ export class MyCalendarPageComponent implements OnInit {
   eventsFiltered: any[] | null = [];
   searchTerm: string = "";
   users: Array<any> = [];
-  myEvents: Event[] = []; // Array para almacenar los eventos del calendario
+  myEvents: Event[] = [];
 
   constructor(private http: HttpClient, private notify: Notifications, private router: Router) {
-    (async () => {;
+    (async () => {
       this.auth.onAuthStateChanged(async (user) => {
         if (user) {
           const userID: string = user.uid;
-          this.eventsFiltered =  await this.getEventsForUser(userID);
+          this.eventsFiltered = await this.getEventsForUser(userID);
 
           const events: any[] = [];
           // @ts-ignore
@@ -54,8 +54,8 @@ export class MyCalendarPageComponent implements OnInit {
             const finalTimeHour = parseInt(finalTime.split(":")[0], 10);
             const finalTimeMinute = parseInt(finalTime.split(":")[1], 10);
 
-            const startDate = new Date(separatedDate[2], separatedDate[1]-1, separatedDate[0], initialTimeHour, initialTimeMinute); // Usa la fecha y hora actual como inicio (puedes ajustarla según tus necesidades)
-            const endDate = new Date(separatedDate[2], separatedDate[1]-1, separatedDate[0], finalTimeHour, finalTimeMinute);
+            const startDate = new Date(separatedDate[2], separatedDate[1] - 1, separatedDate[0], initialTimeHour, initialTimeMinute);
+            const endDate = new Date(separatedDate[2], separatedDate[1] - 1, separatedDate[0], finalTimeHour, finalTimeMinute);
 
             const evnt = {
               start: startDate,
@@ -82,11 +82,9 @@ export class MyCalendarPageComponent implements OnInit {
       if (docSnapshot.exists()) {
         const userEvents = docSnapshot.data()["events"];
 
-        // Filtrar las claves de los eventos cuyo booleano sea true
-        const filteredEvents = Object.entries(userEvents)
+        return Object.entries(userEvents)
           .filter(([_, value]) => value === true)
           .map(([key]) => key);
-        return filteredEvents;
       } else {
         return null;
       }
@@ -99,14 +97,13 @@ export class MyCalendarPageComponent implements OnInit {
   async getEventsForUser(id: string) {
     try {
       const events = [];
-      const eventIds = await this.loadEventsUser(id); // Obtener los identificadores de los eventos
+      const eventIds = await this.loadEventsUser(id);
 
       if (eventIds && eventIds.length > 0) {
-        // Recorrer los identificadores y consultar los eventos en Firebase
         for (const eventId of eventIds) {
           const eventRef = doc(this.firestore, 'events', eventId);
           const eventSnapshot = await getDoc(eventRef);
-          events.push(eventSnapshot); // Almacenar directamente los datos del evento en el array
+          events.push(eventSnapshot);
         }
       }
 
@@ -129,7 +126,7 @@ export class MyCalendarPageComponent implements OnInit {
         return dateObjA.getTime() - dateObjB.getTime();
       });
 
-      return events; // Devolver el array de eventos
+      return events;
     } catch (error) {
       return null;
     }

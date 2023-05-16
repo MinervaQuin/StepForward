@@ -1,4 +1,4 @@
-.form-box{
+.form-box {
   position: relative;
   border-radius: 10px;
   height: 40px;
@@ -8,12 +8,18 @@
   width: 80%;
   padding-left: 40px;
 }
-.search-bar{
+
+.search-bar {
   display: flex;
 }
+
 .search-bar > img {
   height: 30px;
   position: absolute;
   align-self: center;
   left: 20px;
+}
+
+app-event-card:hover {
+  cursor: pointer;
 }

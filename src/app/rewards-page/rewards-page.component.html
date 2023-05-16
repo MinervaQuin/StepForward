@@ -1,0 +1,46 @@
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
+        integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
+        crossorigin="anonymous"></script>
+<app-header></app-header>
+<div class="body">
+  <h1 class="section-title">Rewards</h1>
+
+  <div class="money-buttons">
+    <button type="button" class="btn button-style display-button-wallet">
+      <h3>
+        <img class="img-size" src="../../assets/images/iconos/wallet2.svg" alt="wallet icon">
+        Wallet
+      </h3>
+    </button>
+
+    <button type="button" class="btn display-button-coins button-style">
+      <h3>
+        <img class="img-size" src="../../assets/images/iconos/cash-coin.svg" alt="cash coin icon">
+        SFCoins
+      </h3>
+      <div class="coins-counter card-styling-wrapper">
+        <div class="card card-styling">
+          <img class="card-styling-item" src="../../assets/images/iconos/coin.svg" alt="coin icon">
+          <h6 class="card-styling-item">{{this.userCoins}}</h6>
+        </div>
+      </div>
+    </button>
+
+  </div>
+
+  <!-- start rewards section -->
+  <div *ngFor="let reward of rewards">
+    <div *ngIf="parseInt(reward.data()['cost']) <= this.userCoins; else rewardUnavailableTemplate">
+      <app-reward-item-available [title]="reward.data()['title']" [description]="reward.data()['description']"
+                                 [value]="reward.data()['cost']"></app-reward-item-available>
+
+    </div>
+
+    <ng-template #rewardUnavailableTemplate>
+      <app-reward-item-unavailable [title]="reward.data()['title']" [description]="reward.data()['description']"
+                                   [value]="reward.data()['cost']"></app-reward-item-unavailable>
+    </ng-template>
+  </div>
+
+</div>
+<app-footer></app-footer>

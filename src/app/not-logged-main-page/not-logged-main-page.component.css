@@ -38,14 +38,14 @@
     justify-content: center;
   }
   .button-arrow-down{
-    height: max-content;
+    width: 150px;
+    height: 150px;
   }
   .arrow-down-icon{
-
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-
-
+    text-decoration: none;
+    color: #5EA391;
+    display: flex;
+    justify-content: center;
   }
 
   /* What we do Paragraph */
@@ -121,4 +121,25 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+  }
+
+  /* comments carousel */
+  .picsum-comment-wrapper > img {
+    height: 70vh;
+    object-fit:contain;
+    width: 100%;
+  }
+
+  .card-container{
+    margin: 5%;
+  }
+
+  .user-icon-size{
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .card-content{
+    text-align: center;
+    border-color: #583E29;
   }

@@ -22,12 +22,11 @@ export class LoginPageComponent {
 
 
   async loginUser() {
-    let userInfo = await signInWithEmailAndPassword(this.auth, <string>this.loginForm.get('email')?.value, <string>this.loginForm.get('password')?.value);
-    if (userInfo) {
+    try{
+      await signInWithEmailAndPassword(this.auth, <string>this.loginForm.get('email')?.value, <string>this.loginForm.get('password')?.value);
       await this.router.navigate(["/home"])
-
-    } else {
-      alert("Email and password do not match. Please, try again");
+    } catch (error) {
+      alert("There was an error.\n" + error);
     }
 
   }

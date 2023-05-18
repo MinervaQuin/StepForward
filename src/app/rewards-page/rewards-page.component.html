@@ -1,6 +1,4 @@
-<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
-        integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
-        crossorigin="anonymous"></script>
+
 <app-header></app-header>
 <div class="body">
   <h1 class="section-title">Rewards</h1>
@@ -32,7 +30,7 @@
   <div *ngFor="let reward of rewards">
     <div *ngIf="parseInt(reward.data()['cost']) <= this.userCoins; else rewardUnavailableTemplate">
       <app-reward-item-available (linkTextChanged)="onLinkedTextChanged($event)" [title]="reward.data()['title']" [description]="reward.data()['description']"
-                                 [value]="reward.data()['cost']"></app-reward-item-available>
+                                 [value]="reward.data()['cost']" [photo]="reward.data()['photo']" ></app-reward-item-available>
     </div>
 
     <ng-template #rewardUnavailableTemplate>

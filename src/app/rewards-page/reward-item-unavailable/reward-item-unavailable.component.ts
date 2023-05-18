@@ -10,4 +10,6 @@ export class RewardItemUnavailableComponent {
   @Input() description: string | undefined;
   @Input() photo: string | undefined;
   @Input() value: string | undefined;
+
 }
+

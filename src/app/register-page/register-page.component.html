@@ -6,8 +6,8 @@
   <h2 class="register-title">Register</h2>
   <div class="register-form-box" [formGroup]="registerForm">
     <div class="full-name">
-      <input class="form-box" id="firstName" placeholder="First Name" type="text" formControlName="firstName">
-      <input class="form-box" id="lastName" placeholder="Last Name" type="text" formControlName="lastName">
+      <input class="form-box form-box-left" id="firstName" placeholder="First Name" type="text" formControlName="firstName">
+      <input class="form-box form-box-right" id="lastName" placeholder="Last Name" type="text" formControlName="lastName">
     </div>
     <div *ngIf="registerForm.get('firstName')?.invalid && registerForm.get('firstName')?.touched">
       <p class="error-message">First Name is required</p>

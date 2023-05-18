@@ -14,9 +14,6 @@
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25), inset 0 2px 2px rgba(0, 0, 0, 0.25);
 }
 
-.full-name {
-  margin-top: 20px;
-}
 
 .form-box {
   border-radius: 10px;
@@ -27,9 +24,26 @@
   width: 80%;
   padding-left: 10px;
 }
+.full-name > .form-box {
+  margin: 0 0 15px;
+}
+.full-name {
+  margin-top: 20px;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
 
 .full-name > .form-box {
-  width: auto;
+  width: calc(50% - 5px);
+}
+
+.form-box-left {
+  align-self: flex-start;
+}
+
+.form-box-right {
+  align-self: flex-end;
 }
 
 .logo-image {

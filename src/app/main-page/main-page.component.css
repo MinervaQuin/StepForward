@@ -10,6 +10,7 @@
 }
 
 .search-bar {
+  margin-left: 15px;
   display: flex;
 }
 
@@ -17,7 +18,7 @@
   height: 30px;
   position: absolute;
   align-self: center;
-  left: 20px;
+  left: 40px;
 }
 
 app-event-card:hover {

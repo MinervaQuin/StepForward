@@ -1,145 +1,160 @@
-
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
-  .body{
-    margin: 15px;
-  }
-  .padding{
-    padding-top: 5px;
-    padding-bottom: 5px;
-  }
+.body {
+  margin: 15px;
+}
 
-  /*  */
-  .container-2{
-    display: flex;
-    justify-content: space-around;
-    height: 45px;
-  }
+.padding {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
 
-  .container-2-1{
-    display: flex;
-    width: 150px;
-  }
+/*  */
+.container-2 {
+  display: flex;
+  justify-content: space-around;
+  height: 45px;
+}
+
+.container-2-1 {
+  display: flex;
+  width: 150px;
+}
 
 
-  .buttonJoinUs{
-    font-family: 'Poppins', sans-serif;
-    background-color: #5EA391;
-    color:white;
-    border: none;
-    border-radius: 10px;
-    width: 100%;
-  }
+.buttonJoinUs {
+  font-family: 'Poppins', sans-serif;
+  background-color: #5EA391;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+}
 
-  .container-button-arrow-down{
-    display: flex;
-    justify-content: center;
-  }
-  .button-arrow-down{
-    width: 150px;
-    height: 150px;
-  }
-  .arrow-down-icon{
-    text-decoration: none;
-    color: #5EA391;
-    display: flex;
-    justify-content: center;
-  }
+.container-button-arrow-down {
+  display: flex;
+  justify-content: center;
+}
 
-  /* What we do Paragraph */
+.button-arrow-down {
+  width: 150px;
+  height: 150px;
+}
 
-  .wwdtext{
-    display: flex;
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
+.arrow-down-icon {
+  text-decoration: none;
+  color: #5EA391;
+  display: flex;
+  justify-content: center;
+}
 
-  }
+/* What we do Paragraph */
 
-  .section-headers{
+.wwdtext {
+  display: flex;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
 
-    font-family: 'Poppins', sans-serif;
-    text-decoration-line: underline;
-    text-decoration-color: #583E29;
-    font-weight: 400;
-  }
+}
 
-  /* Our Partners section */
-  .partner-card{
-    width: 14rem;
-    height: 6rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    margin: 10px;
-  }
+.section-headers {
 
-  .container-3{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
+  font-family: 'Poppins', sans-serif;
+  text-decoration-line: underline;
+  text-decoration-color: #583E29;
+  font-weight: 400;
+}
 
-  /* Carousel */
-  .carousel-container{
-    margin-bottom: 30px;
-  }
+/* Our Partners section */
+.partner-card {
+  width: 14rem;
+  height: 6rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin: 10px;
+}
 
-  .picsum-img-wrapper > img {
-    height: 70vh;
-    object-fit: cover;
-    width: 100%;
-  }
-  .carousel-caption > h3{
-    color: #FFFFFF;
-    text-shadow: 2px 2px #583E29;
+.container-3 {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
 
-  }
+/* Carousel */
+.carousel-container {
+  margin-bottom: 30px;
+}
 
-.carousel-section{
+.picsum-img-wrapper > img {
+  height: 70vh;
+  object-fit: cover;
+  width: 100%;
+}
+
+.carousel-caption > h3 {
+  color: #FFFFFF;
+  text-shadow: 2px 2px #583E29;
+
+}
+
+.carousel-section {
   position: relative;
 }
-.carousel-header-section{
+
+.carousel-header-section {
+  z-index: 5;
   position: absolute;
   top: 0;
   margin-top: 15px;
   width: 100%;
   display: flex;
   justify-content: flex-end;
+  height: 25px;
 }
+
 .carousel-header-section > a {
+  background-color: #5EA391;
+  width: calc(5% + 5px);
+  border-radius: 10px;
+  text-align: center;
+  justify-content: center;
+  text-decoration: none;
+  color: black;
   margin-right: 20px;
 }
+
 .carousel-header-section > a > p {
   font-weight: 400;
   text-shadow: 1px 1px #5EA391;
 }
 
-  .join-us-section{
-    height: 30vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
+.join-us-section {
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
 
-  /* comments carousel */
-  .picsum-comment-wrapper > img {
-    height: 70vh;
-    object-fit:contain;
-    width: 100%;
-  }
+/* comments carousel */
+.picsum-comment-wrapper > img {
+  height: 70vh;
+  object-fit: contain;
+  width: 100%;
+}
 
-  .card-container{
-    margin: 5%;
-  }
+.card-container {
+  margin: 5%;
+}
 
-  .user-icon-size{
-    font-size: 20px;
-    text-align: center;
-  }
 
-  .card-content{
-    text-align: center;
-    border-color: #583E29;
-  }
+.user-icon-size {
+  font-size: 20px;
+  text-align: center;
+}
+
+.card-content {
+  text-align: center;
+  border-color: #583E29;
+}

@@ -31,9 +31,8 @@
   <!-- start rewards section -->
   <div *ngFor="let reward of rewards">
     <div *ngIf="parseInt(reward.data()['cost']) <= this.userCoins; else rewardUnavailableTemplate">
-      <app-reward-item-available [title]="reward.data()['title']" [description]="reward.data()['description']"
+      <app-reward-item-available (linkTextChanged)="onLinkedTextChanged($event)" [title]="reward.data()['title']" [description]="reward.data()['description']"
                                  [value]="reward.data()['cost']"></app-reward-item-available>
-
     </div>
 
     <ng-template #rewardUnavailableTemplate>
@@ -41,6 +40,7 @@
                                    [value]="reward.data()['cost']"></app-reward-item-unavailable>
     </ng-template>
   </div>
+
 
 </div>
 <app-footer></app-footer>

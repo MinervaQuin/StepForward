@@ -6,8 +6,18 @@
   <h2 class="login-title">Login</h2>
   <div class="login-form-box" [formGroup]="loginForm">
     <input class="form-box" id="email" placeholder="Email" type="email" formControlName="email">
+    <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+      <p class="error-message" *ngIf="loginForm.get('email')?.errors?.['required']">Email is required</p>
+      <p class="error-message" *ngIf="loginForm.get('email')?.errors?.['email']">Invalid email format</p>
+    </div>
+
     <input class="form-box" id="password" placeholder="Password" type="password" formControlName="password">
-    <button class="form-button" (click)="loginUser()">
+
+    <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+      <p class="error-message" *ngIf="loginForm.get('password')?.errors?.['required']">Password is required</p>
+    </div>
+
+    <button class="form-button" (click)="loginUser()" [disabled]="loginForm.invalid">
       Login
     </button>
     <div class="already-have-account">

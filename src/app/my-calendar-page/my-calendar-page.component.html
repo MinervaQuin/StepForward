@@ -1,0 +1,23 @@
+<link href="/node_modules/@mobiscroll/angular/dist/css/mobiscroll.min.css" rel="stylesheet" />
+
+<app-header></app-header>
+
+<div class="mycalendar">
+  <mbsc-eventcalendar [data]="myEvents" [options]="eventSettings"></mbsc-eventcalendar>
+</div>
+
+<h1 class="register-title">Upcoming events</h1>
+
+<div>
+  <div *ngFor="let event of eventsFiltered">
+    <div class="card-container">
+      <div class="card-information">
+        <h1 class="card-title">{{event.data()['title']}}</h1>
+        <h3 class="card-organization-name">{{event.data()['organizationName']}}</h3>
+        <p class="card-text">{{event.data()['date']}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer class="login-footer"></app-footer>

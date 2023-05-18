@@ -33,6 +33,12 @@ h2{
     color: #583E29;
     font-weight: 700;
     margin-top: 5rem;
+
+}
+
+.organization-name{
+  font-family: Poppins, sans-serif;
+  font-weight: 500;
 }
 
 .info-container{

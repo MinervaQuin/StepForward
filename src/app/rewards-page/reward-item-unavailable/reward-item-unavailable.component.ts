@@ -11,5 +11,10 @@ export class RewardItemUnavailableComponent {
   @Input() photo: string | undefined;
   @Input() value: string | undefined;
 
+  ngOnInit(){
+    if (this.photo == null || this.photo=="") {
+      this.photo="//placehold.it/200";
+    }
+  }
 }
 

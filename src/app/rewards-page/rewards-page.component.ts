@@ -40,14 +40,9 @@ export class RewardsPageComponent {
             coins: 0
           });
           this.userCoins = 0;
-
-
         }
-
-        // ...
       } else {
         // User is signed out
-        // ...
         await this.router.navigate(["/"])
       }
     });
@@ -55,4 +50,17 @@ export class RewardsPageComponent {
 
 
   protected readonly parseInt = parseInt;
+
+  async onLinkedTextChanged(rewardCost: string){
+      this.userCoins= this.userCoins-parseInt(rewardCost);
+      const docRef = doc(this.firestore, "users", this.userSignedIn);
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        await updateDoc(docRef, {
+          coins: this.userCoins
+        });
+      }
+  }
+
+
 }
